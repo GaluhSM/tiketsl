@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Seat extends Model
+class Cinema extends Model
 {
     use HasFactory;
-    protected $fillable = ['studio_id', 'row', 'number'];
+    protected $fillable = ['name', 'location'];
 
-    public function studio()
+    public function studios()
     {
-        return $this->belongsTo(Studio::class);
+        return $this->hasMany(Studio::class);
     }
 }
